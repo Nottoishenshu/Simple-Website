@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>About Me | Interactive QA</b></title>
+    <style>
+        :root {
+            --bg-color: #bbadd2;
+            --card-color: #d49c48;
+            --text-color: #333333;
+            --accent-color: #130f358e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        /* Interactive Card Styling */
+        .qa-card {
+            background-color: var(--card-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.612);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .qa-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .question-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-btn:focus {
+            outline: 2px solid var(--accent-color);
+        }
+
+        .answer-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fefefe;
+            border-top: 1px solid #eee;
+        }
+
+        .answer-text {
+            padding: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .gif-container {
+            padding: 0 20px 20px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .active .answer-content {
+            max-height: 500px; 
+            transition: max-height 0.5s ease-in;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .active .arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hey there, I'm Toivoa! 👋</h1>
+
+        <p>Click the questions below to get to know me better.</p>
+           <div class="qa-card">
+            <button class="question-btn" onclick="toggleAnswer(this)">
+                <span>Who am I? </span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="answer-content">
+                <div class="answer-text">
+                    Well, I am Toivoa, a passoniate learner and aspiring web developer. I am currently diving into a world of cooding.
+                </div>
+                <div class="gif-container">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExczM5MmE2ZXFkaHI5ZHM5YzBncDV0eG4zcmExdHdhOGIzaXIyc2psbSZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/wzJ67MJMk6UMM/giphy.gif" alt="Learning GIF">
+                </div>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <button class="question-btn" onclick="toggleAnswer(this)">
+                <span>🚀What do I do for fun?</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="answer-content">
+                <div class="answer-text">
+                    When I am not coding or building websites, you can usually find me gaming, sipping iced coffee, or searching for the perfect music playlist.
+                </div>
+                <div class="gif-container">
+                    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGtrM3Zld2wwNWd5bDZra2FwcTh3a2oyd2lpazd4aWJ6aW9nbGF4byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1pAhncsuyFjcixgtLY/giphy.gif" alt="Gaming GIF">
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="qa-card">
+            <button class="question-btn" onclick="toggleAnswer(this)">
+                <span> What am I trying here?</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="answer-content">
+                <div class="answer-text">
+                   Well I am trying to build a working website that answers questions about me. I am a learner.
+                </div>
+                <div class="gif-container">
+                    <!-- Replace the src URL with your own GIF link -->
+                    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmJtcHNiem9rYTk3anU5cGp3aGlxYjBzY3VyZDdzZXA3czFvOGphZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bGgsc5mWoryfgKBx1u/giphy.gif" alt="Learning GIF">
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="qa-card">
+            <button class="question-btn" onclick="toggleAnswer(this)">
+                <span>💻 Current coding superpower?</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="answer-content">
+                <div class="answer-text">
+                    I am currently mastering HTML, CSS, and interactive JavaScript to make awesome experiences just like this page!
+                </div>
+                <div class="gif-container">
+                    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdng2MXBtc2N6bzJpbnU1Z2ZkMjR6OHhsNWJvOHN0dGRuendoempuNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPnAiaMCws8nOsE/giphy.gif" alt="Coding GIF">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAnswer(button) {
+            const card = button.parentElement;
+            
+            card.classList.toggle('active');
+            
+            document.querySelectorAll('.qa-card').forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.classList.remove('active');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
