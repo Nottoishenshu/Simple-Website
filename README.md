@@ -8,4 +8,4 @@ This a learning Website. Just started with HTML and CSS.
   - about websites
   - making websites more interactive
   - How to add colour, buttons and images
-  - Hoe CSS and Html work together.
+  - How CSS and Html work together.
